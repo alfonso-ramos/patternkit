@@ -15,6 +15,31 @@
 - [ ] Implementar footer con links a Docs, GitHub y página “Contribuir”.
 
 ## 4. Sistema de contenido para Patrones de Diseño
+- [ ] **4.1 Modelo y estructura**
+  - [ ] Inventariar la lista inicial de patrones y asignarles `slug`, categoría (creacional/estructural/comportamiento) y nivel (básico/medio/avanzado).
+  - [ ] Definir plantilla MDX base con frontmatter obligatorio:
+    ```yaml
+    title: "Singleton"
+    slug: "singleton"
+    category: "creacional"
+    level: "básico"
+    summary: "Gestiona una única instancia..."
+    tags: ["go4", "instancing"]
+    diagram:
+      static: "/patterns/singleton/uml.svg"
+      animated: "/patterns/singleton/uml.mp4"
+    snippets:
+      - lang: "ts"
+        file: "singleton.ts"
+    quizId: "singleton-intro"
+    references:
+      - label: "Netflix API Gateway"
+        url: "https://..."
+    ```
+  - [ ] Crear componentes MDX (`<PatternIntro>`, `<PatternProsCons>`, `<PatternExample>`, `<PatternQuiz>`) para reutilizar bloques editoriales.
+  - [ ] Definir estructura de carpetas `content/patterns/{slug}/` con subcarpetas para `diagrams/`, `snippets/{lang}/`, `cases/` y `quiz.json`.
+  - [ ] Documentar convención para snippets multi-lenguaje (JSON por patrón o uno por lenguaje) y para explicaciones línea a línea.
+  - [ ] Especificar checklist editorial: aceptar PR solo si incluye MDX + diagramas + snippets + quiz.
 - [ ] Definir plantilla MDX con metadatos (tipo: creacional/estructural/comportamiento, dificultad).
 - [ ] Redactar explicación por patrón (problema, motivo, analogía, ventajas, desventajas, anti-usos).
 - [ ] Investigar y documentar casos reales (Netflix, Google, Meta, etc.).

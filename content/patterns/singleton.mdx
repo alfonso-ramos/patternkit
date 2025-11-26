@@ -1,0 +1,122 @@
+---
+title: "Singleton"
+slug: "singleton"
+category: "creacional"
+level: "básico"
+summary: "Garantiza una única instancia global y expone un punto de acceso controlado para compartir estado o recursos."
+tags: ["go4", "instancing", "creational"]
+diagram:
+  static: "/patterns/singleton/uml.svg"
+  animated: "/patterns/singleton/uml.mp4"
+snippets:
+  - lang: "ts"
+    file: "/code-examples/patterns/singleton/js.ts"
+  - lang: "python"
+    file: "/code-examples/patterns/singleton/python.txt"
+quizId: "singleton-intro"
+references:
+  - label: "Netflix API Gateway"
+    url: "https://netflixtechblog.com/"
+  - label: "Refactoring Guru - Singleton"
+    url: "https://refactoring.guru/design-patterns/singleton"
+---
+
+<PatternIntro
+  title="Singleton"
+  category="Creacional"
+  level="básico"
+  summary="Un objeto único coordina acceso a un recurso y evita duplicar costos."
+  problem="Cuando múltiples módulos crean sus propias instancias se duplican conexiones, se fragmenta la configuración y se rompen invariantes globales."
+  cta={{ label: "Ir a ejemplos", href: "/code-examples/patterns/singleton" }}
+/>
+
+<PatternNarrativeSection
+  label="Por qué existe"
+  title="Centralizar recursos compartidos"
+  body="Es útil cuando un servicio, logger, caché o registro debe existir solo una vez para mantener consistencia y reducir consumo." 
+  bullets={[
+    "Libera al resto del sistema de saber cómo se instancia",
+    "Permite cachés o pools globales sin dependencias cíclicas",
+  ]}
+/>
+
+<PatternNarrativeSection
+  label="Analogía"
+  title="Un control de acceso"
+  body="Piénsalo como el switch general de un estudio: si cada quien instalara su propio switch podrías quemar el sistema."
+  aside={<em>“Una sola consola coordina quién prende la luz y cuándo.”</em>}
+/>
+
+<PatternNarrativeSection
+  label="Dónde NO usarlo"
+  title="Cuando necesitas escalabilidad horizontal"
+  body="Si tu aplicación requiere instancias aisladas por petición o pruebas paralelas, el Singleton introduce acoplamiento y estado global difícil de controlar."
+  bullets={[
+    "Evítalo en código que debería ser puro o fácilmente testeable",
+    "Prefiere inyección de dependencias cuando puedas",
+  ]}
+/>
+
+<PatternDualList
+  leftTitle="Ventajas"
+  leftItems={[
+    "Elimina configuraciones duplicadas",
+    "Simplifica el consumo de recursos compartidos",
+    "Permite lazy loading del recurso",
+  ]}
+  rightTitle="Desventajas"
+  rightItems={[
+    "Aumenta el acoplamiento global",
+    "Dificulta las pruebas unitarias",
+    "Puede convertirse en cuello de botella",
+  ]}
+  footnote="Antes de implementarlo, evalúa si una fábrica o un contenedor de dependencias resuelve mejor el problema."
+/>
+
+<PatternCodeTabs
+  samples={[
+    {
+      lang: "ts",
+      label: "TypeScript",
+      code: `class Logger {
+  private static instance: Logger | null = null;
+  private constructor() {}
+
+  static getInstance() {
+    if (!Logger.instance) {
+      Logger.instance = new Logger();
+    }
+    return Logger.instance;
+  }
+
+  log(message: string) {
+    console.info(\`\[log] \${message}\`);
+  }
+}
+
+export function useLogger() {
+  const logger = Logger.getInstance();
+  logger.log("Se emite un mensaje desde un Singleton");
+}`,
+    },
+    {
+      lang: "python",
+      label: "Python",
+      code: `class Logger:
+    _instance = None
+
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+        return cls._instance
+
+    def log(self, message: str) -> None:
+        print(f"[log] {message}")
+
+
+def use_logger() -> None:
+    logger = Logger()
+    logger.log("Mensaje emitido desde el Singleton en Python")`,
+    },
+  ]}
+/>

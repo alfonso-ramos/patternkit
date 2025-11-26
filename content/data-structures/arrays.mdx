@@ -1,0 +1,55 @@
+---
+title: "Arrays"
+slug: "arrays"
+type: "lineal"
+level: "básico"
+summary: "Colección contigua que permite acceso directo a cada elemento usando un índice." 
+bigO:
+  access: "O(1)"
+  search: "O(n)"
+  insert: "O(n)"
+  delete: "O(n)"
+snippets:
+  - lang: "ts"
+    file: "/code-examples/data-structures/arrays/js.ts"
+  - lang: "c"
+    file: "/code-examples/data-structures/arrays/c.txt"
+references:
+  - label: "MDN Arrays"
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"
+  - label: "CS50 Arrays"
+    url: "https://cs50.harvard.edu/x/2023/notes/2/"
+---
+
+<PatternIntro
+  title="Arrays"
+  category="Estructura lineal"
+  level="básico"
+  summary="Estructura contigua ideal para acceso directo y lectura secuencial."
+  problem="Necesitas almacenar elementos del mismo tipo y acceder a ellos por índice con la mayor velocidad posible."
+  cta={{ label: "Ver implementación", href: "/code-examples/data-structures/arrays" }}
+/>
+
+<PatternNarrativeSection
+  label="Qué problema resuelve"
+  title="Acceso directo"
+  body="Los arrays dan saltos constantes hacia cualquier posición, lo que los hace perfectos para lookup indexado, cachés y buffers simples."
+  bullets={[
+    "Se mapean fácilmente a memoria contigua",
+    "Compatibles con operaciones vectorizadas",
+  ]}
+/>
+
+<PatternNarrativeSection
+  label="Cuándo usarlos"
+  title="Lecturas frecuentes y datos homogéneos"
+  body="Son ideales cuando priorizas lecturas rápidas sobre inserciones en medio o cuando puedes agrupar modificaciones al final."
+/>
+
+<PatternDualList
+  leftTitle="Ventajas"
+  leftItems={["Acceso O(1)", "Cache-friendly", "Implementación simple"]}
+  rightTitle="Desventajas"
+  rightItems={["Inserciones costosas", "Tamaño fijo en bajo nivel", "Requiere memoria contigua"]}
+  footnote="Si necesitas inserciones frecuentes en medio, evalúa listas enlazadas o estructuras dinámicas."
+/>

@@ -14,12 +14,14 @@ const learningPaths = [
     description:
       "Desde Singleton hasta Observer con diagramas, casos reales y snippets comentados.",
     cta: "Explorar patrones",
+    href: "/patterns/singleton",
   },
   {
     title: "Estructuras de Datos",
     description:
       "Árboles AVL, grafos, colas y más con visualizaciones animadas y código desde cero.",
     cta: "Dominar estructuras",
+    href: "/data-structures/arrays",
   },
 ];
 
@@ -30,7 +32,7 @@ export default function Home() {
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,rgba(15,23,42,0.05)_1px,transparent_1px)] bg-size-[200px_200px] opacity-60" />
       <main className="relative mx-auto flex w-full max-w-6xl flex-col gap-24 px-6 py-16 sm:px-10 lg:px-16">
         {/* Hero */}
-        <section className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <section id="hero" className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl font-medium leading-tight text-slate-950 sm:text-6xl">
@@ -42,12 +44,18 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
-              <button className="rounded-full bg-slate-900 px-7 py-3 text-sm font-semibold text-white transition hover:bg-slate-700">
-                Explorar contenido
-              </button>
-              <button className="rounded-full border border-slate-300 px-7 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-500">
-                Ver rutas temáticas
-              </button>
+              <a
+                className="rounded-full bg-slate-900 px-7 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
+                href="/patterns"
+              >
+                Explorar patrones
+              </a>
+              <a
+                className="rounded-full border border-slate-300 px-7 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-500"
+                href="/data-structures/arrays"
+              >
+                Ver estructuras
+              </a>
             </div>
           </div>
           <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
@@ -75,7 +83,7 @@ export default function Home() {
         </section>
 
         {/* ¿Qué aprenderás? */}
-        <section className="space-y-6">
+        <section id="learn" className="space-y-6">
           <div className="flex flex-col gap-3">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
               ¿Qué aprenderás?
@@ -99,7 +107,7 @@ export default function Home() {
         </section>
 
         {/* Rutas */}
-        <section className="space-y-10">
+        <section id="routes" className="space-y-10">
           <div className="flex flex-col gap-3">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
               Dos rutas principales
@@ -125,10 +133,13 @@ export default function Home() {
                     {path.description}
                   </p>
                 </div>
-                <button className="mt-8 inline-flex w-fit items-center gap-2 text-sm font-semibold text-slate-900 transition hover:text-slate-600">
+                <a
+                  className="mt-8 inline-flex w-fit items-center gap-2 text-sm font-semibold text-slate-900 transition hover:text-slate-600"
+                  href={path.href}
+                >
                   {path.cta}
                   <span aria-hidden="true">→</span>
-                </button>
+                </a>
               </article>
             ))}
           </div>
