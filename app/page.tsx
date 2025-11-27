@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const brandName = "PatternKit";
 
 const benefits = [
@@ -12,16 +14,16 @@ const learningPaths = [
   {
     title: "Patrones de Diseño",
     description:
-      "Desde Singleton hasta Observer con diagramas, casos reales y snippets comentados.",
+      "De Singleton a Observer, explicado como si estuviéramos aprendiendo juntos y viendo el porqué de cada paso.",
     cta: "Explorar patrones",
-    href: "/patterns/singleton",
+    href: "/patterns",
   },
   {
     title: "Estructuras de Datos",
     description:
-      "Árboles AVL, grafos, colas y más con visualizaciones animadas y código desde cero.",
+      "Árboles AVL, grafos, colas y más con visuales animados y código sin drama, desde el primer nodo.",
     cta: "Dominar estructuras",
-    href: "/data-structures/arrays",
+    href: "/data-structures",
   },
 ];
 
@@ -39,23 +41,22 @@ export default function Home() {
                 {brandName}
               </h1>
               <p className="text-lg text-slate-600">
-                Laboratorio abierto para aprender y divulgar patrones de diseño y estructuras de
-                datos con rigor visual, ejemplos multi-lenguaje y narrativa accesible.
+                Tu playground para patrones de diseño + estructuras de datos. Aprende con ejemplos reales, visuales sin rollo y hacks que puedes usar al instante.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
-              <a
+              <Link
                 className="rounded-full bg-slate-900 px-7 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
                 href="/patterns"
               >
                 Explorar patrones
-              </a>
-              <a
+              </Link>
+              <Link
                 className="rounded-full border border-slate-300 px-7 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-500"
-                href="/data-structures/arrays"
+                href="/data-structures"
               >
                 Ver estructuras
-              </a>
+              </Link>
             </div>
           </div>
           <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
@@ -64,7 +65,7 @@ export default function Home() {
                 <p className="text-xs uppercase tracking-[0.4em] text-slate-400">Playbook</p>
                 <h2 className="mt-2 text-2xl font-semibold text-slate-900">Ruta editorial</h2>
                 <p className="text-sm text-slate-500">
-                  Micro-lecciones con foco en comprensión profunda y divulgación clara.
+                  Micro-lecciones diseñadas para que entiendas el concepto, lo pruebes y lo cuentes como si fuera tuyo.
                 </p>
               </div>
               <ul className="space-y-3 text-sm">
@@ -88,10 +89,9 @@ export default function Home() {
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
               ¿Qué aprenderás?
             </p>
-            <h2 className="text-3xl font-semibold text-slate-900">Fundamentos sin enredos.</h2>
+            <h2 className="text-3xl font-semibold text-slate-900">Fundamentos sin vueltas.</h2>
             <p className="text-base text-slate-600">
-              Narrativas visuales y ejercicios guiados para que cada patrón y estructura tenga
-              contexto, propósito y aplicación práctica.
+              Historias visuales, retos mini y ejemplos cercanos para que cada patrón y estructura tenga contexto real, propósito y aplicación inmediata.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
@@ -112,10 +112,9 @@ export default function Home() {
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
               Dos rutas principales
             </p>
-            <h2 className="text-3xl font-semibold text-slate-900">Elige tu camino.</h2>
+            <h2 className="text-3xl font-semibold text-slate-900">Arma tu ruta.</h2>
             <p className="text-base text-slate-600">
-              Currículas editoriales enfocadas en comprensión aplicada: patrones con contexto y
-              estructuras con visualizaciones comparativas.
+              Currículas editoriales pensadas para aprender haciendo: patrones con historias útiles y estructuras con comparativas visuales para no perderte.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2">

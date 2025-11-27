@@ -7,11 +7,11 @@
 - [ ] Diseñar estructura de carpetas para contenido, assets, quizzes y visualizaciones.
 
 ## 3. Landing / Home
-- [ ] Diseñar y maquetar Hero con título, subtítulo y CTA “Comenzar”.
-- [ ] Construir sección “¿Qué aprenderás?” con bullets (explicaciones simples, diagramas, ejemplos reales, multi-lenguaje, mini-quizzes).
-- [ ] Implementar bloque “Dos rutas” con tarjetas Patrones/Estructuras, iconos y CTA.
+- [x] Diseñar y maquetar Hero con título, subtítulo y CTA “Comenzar”.
+- [x] Construir sección “¿Qué aprenderás?” con bullets (explicaciones simples, diagramas, ejemplos reales, multi-lenguaje, mini-quizzes).
+- [x] Implementar bloque “Dos rutas” con tarjetas Patrones/Estructuras, iconos y CTA.
 - [ ] Crear sección de características diferenciadoras (código multi-lenguaje, visualizaciones animadas, tema dual, navegación rápida).
-- [ ] Añadir bloque “¿Qué hace diferente este portal?” con bullets humanos/prácticos.
+
 - [ ] Implementar footer con links a Docs, GitHub y página “Contribuir”.
 
 ## 4. Sistema de contenido para Patrones de Diseño
@@ -59,6 +59,15 @@
 - [ ] Construir tablas Big-O coloreadas para operaciones clave.
 - [ ] Documentar casos reales (hash tables en apps grandes, stacks en historiales, árboles/grafos en compiladores, BFS/DFS en redes).
 - [ ] Diseñar mini-quizzes (3–5 preguntas) con animación Correcto/Incorrecto.
+
+### 5.1 Página “Big-O Lab”
+- [ ] Diseñar hero con título + subtítulo corto explicando por qué Big-O es la brújula de rendimiento y CTA "Ver tabla completa".
+- [ ] Redactar sección “¿Por qué importa?” con 3 mini-panels (búsquedas, render en front, cargas masivas) y bullets de beneficios.
+- [ ] Construir tabla/galería de complejidades (O(1)→O(n!), nombre coloquial, ejemplos, “ideal para”/“evita cuando”).
+- [ ] Implementar playground visual (SVG/Canvas) con slider de tamaño de input para comparar curvas y texto guía para interpretarlas.
+- [ ] Crear checklist aplicable (identificar operación dominante, separar lectura/escritura, medir en código real, validar con datos) con tips de errores comunes.
+- [ ] Añadir sección de recursos/CTA cruzada hacia Patrones y Estructuras para practicar.
+- [ ] Definir fuente de datos centralizada (JSON/TS) para tabla + playground y documentar cómo extenderla.
 
 ## 6. Motor de visualizaciones y experiencia interactiva
 - [ ] Evaluar y seleccionar librería principal (D3.js o React Flow) y definir fallback SVG/canvas para MVP.
